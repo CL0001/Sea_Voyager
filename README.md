@@ -47,4 +47,4 @@ We would like to thank the following individuals and projects for their contribu
 [Sirpupko - Software Development Contributor](https://github.com/sirpupko)  
 
 ## Contact
-For any questions, suggestions, or feedback, feel free to reach out to us at [email@example.com]() or [discord](https://discord.gg/b7gG2waHwr).
+For any questions, suggestions, or feedback, feel free to reach out to us at [discord](https://discord.gg/b7gG2waHwr).
