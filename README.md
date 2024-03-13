@@ -33,7 +33,7 @@ We welcome contributions from the community to make Sea Voyager even better! To 
 2. Clone Your Fork - `git clone https://github.com/your-username/Sea_Voyager.git`
 3. Create a Branch - `git checkout -b feature/my-feature`
 4. Make Changes - Make your desired changes to the codebase.
-5. Commit Changes - `git commit -am "Add my feature`
+5. Commit Changes - `git commit -am "Add my feature"`
 6. Push Changes - `git push origin feature/my-feature`
 7. Open a Pull Request - Go to the original repository and click "New Pull Request" to submit your changes for review.
 
