@@ -1,0 +1,34 @@
+[gd_scene load_steps=9 format=3 uid="uid://cvwrte6ee8487"]
+
+[ext_resource type="Shader" uid="uid://dlix813tt2mip" path="res://Shaders/water.tres" id="1_y43f7"]
+[ext_resource type="PackedScene" uid="uid://cliqffjy1153p" path="res://Assets/Isle_Models/1.glb" id="2_844fy"]
+[ext_resource type="PackedScene" uid="uid://dwyuwiwy56j4v" path="res://Assets/Isle_Models/2.glb" id="3_kuiol"]
+[ext_resource type="PackedScene" uid="uid://drcen08m4qqyc" path="res://Assets/Isle_Models/3.glb" id="4_cwpt4"]
+[ext_resource type="PackedScene" uid="uid://bl38a1ckckgbx" path="res://Assets/Isle_Models/4.glb" id="5_qjj21"]
+[ext_resource type="PackedScene" uid="uid://cen8k7jtubvxg" path="res://Assets/Isle_Models/5.glb" id="6_83m0g"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_icufl"]
+render_priority = 0
+shader = ExtResource("1_y43f7")
+shader_parameter/ColorParameter = Color(0, 0.266667, 0.533333, 1)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_8h6t0"]
+material = SubResource("ShaderMaterial_icufl")
+size = Vector2(10, 10)
+subdivide_width = 20
+subdivide_depth = 20
+
+[node name="Materials" type="Node3D"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("PlaneMesh_8h6t0")
+
+[node name="1" parent="." instance=ExtResource("2_844fy")]
+
+[node name="2" parent="." instance=ExtResource("3_kuiol")]
+
+[node name="3" parent="." instance=ExtResource("4_cwpt4")]
+
+[node name="4" parent="." instance=ExtResource("5_qjj21")]
+
+[node name="5" parent="." instance=ExtResource("6_83m0g")]
