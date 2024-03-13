@@ -1,0 +1,33 @@
+[gd_scene load_steps=6 format=3 uid="uid://dcqwfd4cquswo"]
+
+[ext_resource type="Script" path="res://Scripts/Character_Physics.gd" id="1_rh6e2"]
+[ext_resource type="Script" path="res://Scripts/Character_Rotation.gd" id="2_0c0vj"]
+[ext_resource type="PackedScene" uid="uid://cf2gl7hfx5b7r" path="res://Assets/Ship_Models/TestNormalBoat.glb" id="2_svnf4"]
+[ext_resource type="Script" path="res://Scripts/Character_Camera.gd" id="4_7foc8"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_k5ldx"]
+
+[node name="Character" type="RigidBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 11.0518, 0)
+script = ExtResource("1_rh6e2")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+script = ExtResource("2_0c0vj")
+
+[node name="TestNormalBoat" parent="MeshInstance3D" instance=ExtResource("2_svnf4")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(2, 0, 0, 0, -9.83506e-08, -1, 0, 2.25, -4.37114e-08, 0, 0, 0)
+shape = SubResource("CapsuleShape3D_k5ldx")
+
+[node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]
+
+[node name="CameraPoint" type="Node3D" parent="."]
+transform = Transform3D(-4.37114e-08, -0.965925, 0.258819, 0, 0.258819, 0.965926, -1, 4.22219e-08, -1.13133e-08, 3, 15, 0)
+metadata/_edit_group_ = true
+
+[node name="Camera3D" type="Camera3D" parent="CameraPoint" node_paths=PackedStringArray("camera_point") groups=["Camera"]]
+fov = 90.0
+script = ExtResource("4_7foc8")
+camera_point = NodePath("..")
