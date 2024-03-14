@@ -23,6 +23,7 @@ glow_bloom = 0.05
 [node name="Enviroment" type="Node3D" parent="."]
 
 [node name="NavigationRegion3D" type="NavigationRegion3D" parent="Enviroment"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.957993, 9.31154, -6.44457)
 navigation_mesh = SubResource("NavigationMesh_jeapm")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Enviroment/NavigationRegion3D"]

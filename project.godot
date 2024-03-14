@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="ship_game"
-run/main_scene="res://Scenes/water.tscn"
+run/main_scene="res://Scenes/Menus/Main.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
 config/icon="res://icon.svg"
 

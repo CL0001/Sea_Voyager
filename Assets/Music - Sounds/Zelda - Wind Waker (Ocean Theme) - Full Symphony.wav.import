@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://buvyuvwkc271l"
+path="res://.godot/imported/Zelda - Wind Waker (Ocean Theme) - Full Symphony.wav-213432d5bc264038db7a346d467f97b4.sample"
+
+[deps]
+
+source_file="res://Assets/Music - Sounds/Zelda - Wind Waker (Ocean Theme) - Full Symphony.wav"
+dest_files=["res://.godot/imported/Zelda - Wind Waker (Ocean Theme) - Full Symphony.wav-213432d5bc264038db7a346d467f97b4.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0
