@@ -1,0 +1,104 @@
+[gd_scene load_steps=11 format=3 uid="uid://x630d1f2yjg3"]
+
+[ext_resource type="Script" path="res://Scripts/MainMenu.gd" id="1_66wns"]
+[ext_resource type="Texture2D" uid="uid://cg8bqemjf3lkw" path="res://Assets/Images/main_menu.png" id="2_i2trd"]
+[ext_resource type="FontFile" uid="uid://c1rhxgch4klcm" path="res://Assets/Fonts/crang/Crang.ttf" id="3_ntc7l"]
+[ext_resource type="AudioStream" uid="uid://buvyuvwkc271l" path="res://Assets/Music - Sounds/Zelda - Wind Waker (Ocean Theme) - Full Symphony.wav" id="4_flbrd"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_0aio2"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_1muvq"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_xcbwi"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_fger1"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_4gx7l"]
+
+[sub_resource type="Theme" id="Theme_u5bhy"]
+default_font = ExtResource("3_ntc7l")
+Button/colors/font_hover_color = Color(0.760784, 0.729412, 0.517647, 1)
+Button/styles/disabled = SubResource("StyleBoxEmpty_0aio2")
+Button/styles/focus = SubResource("StyleBoxEmpty_1muvq")
+Button/styles/hover = SubResource("StyleBoxEmpty_xcbwi")
+Button/styles/normal = SubResource("StyleBoxEmpty_fger1")
+Button/styles/pressed = SubResource("StyleBoxEmpty_4gx7l")
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_66wns")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_i2trd")
+expand_mode = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+clip_contents = true
+custom_minimum_size = Vector2(32, 0)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.0575486
+anchor_top = 0.395062
+anchor_right = 0.244549
+anchor_bottom = 0.736099
+offset_left = -0.296005
+offset_right = 0.279968
+offset_bottom = 0.00799561
+theme = SubResource("Theme_u5bhy")
+metadata/_edit_use_anchors_ = true
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="Start" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 6
+focus_neighbor_top = NodePath("../Quit")
+focus_neighbor_bottom = NodePath("../Quit")
+focus_next = NodePath("../Quit")
+focus_previous = NodePath("../Quit")
+theme_override_font_sizes/font_size = 32
+text = "Play"
+
+[node name="Options" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 6
+focus_neighbor_top = NodePath("../Quit")
+focus_neighbor_bottom = NodePath("../Quit")
+focus_next = NodePath("../Quit")
+focus_previous = NodePath("../Quit")
+theme_override_font_sizes/font_size = 32
+text = "Options"
+
+[node name="Quit" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 6
+focus_neighbor_top = NodePath("../Start")
+focus_neighbor_bottom = NodePath("../Start")
+focus_next = NodePath("../Start")
+focus_previous = NodePath("../Start")
+theme_override_font_sizes/font_size = 32
+text = "Exit"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_flbrd")
+volume_db = -20.0
+autoplay = true
+
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Start" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Quit" to="." method="_on_quit_pressed"]
